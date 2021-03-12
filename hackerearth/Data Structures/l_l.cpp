@@ -1,23 +1,31 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h>// inserting a node at the beginning
 
-int main(){
-struct Node{
+struct Node {
     int data;
-    Node* link;
+    Node* next;
 };
+Node* head;
 
-//head node
-Node* A;
-A = NULL;
+void Insert(int x){
+    Node* temp =  new Node();
+    temp-> data = x;
+    temp->next = head;
+    head = temp;
+    
+}
+void Print (){
 
-Node* temp = new Node();
-temp->data = 2;
-temp->link = NULL;
-
-A = temp;
-
-Node* temp = new Node();
-temp->data=4;
-temp->link=NULL;
+}
+int main(void){
+    int n, i, x;
+    head = NULL; // empty list
+    std::cout << "How many numbers:";
+    std ::cin >> n;
+    for(int i=0;i<n;i++){
+        std::cout << "Enter the number:";
+        std::cin >> x;
+        Insert(x);
+        Print();
+    }
 
 }

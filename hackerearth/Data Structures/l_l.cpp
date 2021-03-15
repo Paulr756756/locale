@@ -6,26 +6,52 @@ struct Node {
 };
 Node* head;
 
-void Insert(int x){
-    Node* temp =  new Node();
-    temp-> data = x;
-    temp->next = head;
-    head = temp;
-    
-}
 void Print (){
+    Node *curr_node = head;
+    while(curr_node->next!=NULL){
+        std::cout << curr_node->data << std::endl;
+        curr_node=curr_node->next;
+    }
+    std::cout << curr_node->data << std::endl;
 
 }
 int main(void){
-    int n, i, x;
-    head = NULL; // empty list
-    std::cout << "How many numbers:";
-    std ::cin >> n;
-    for(int i=0;i<n;i++){
-        std::cout << "Enter the number:";
-        std::cin >> x;
-        Insert(x);
-        Print();
-    }
+    int x;
+    head = NULL;
+    Node *temp = new Node();
+    std::cin >> x;
+    temp->data = x;
+    temp->next = NULL;
+    head=temp;
+    Node* curr_node = head;
 
+    temp = new Node();
+    std::cin >> x;
+    temp->data = x;
+    temp->next = NULL;
+    curr_node->next=temp;
+    curr_node = temp;
+
+    temp = new Node();
+    std::cin >> x;
+    temp->data = x;
+    temp->next=NULL;
+    curr_node->next = temp;
+    curr_node=temp;
+    
+    temp = new Node();
+    std::cin >> x;
+    temp->data = x;
+    temp->next=NULL;
+    curr_node->next=temp;
+    curr_node=temp;
+
+    temp=new Node();
+    std::cin >> x;
+    temp->data=x;
+    temp->next = NULL;
+    curr_node->next=temp;
+
+
+    Print();
 }

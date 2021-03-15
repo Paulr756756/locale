@@ -1,33 +1,46 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
-struct Node{
-    int data;
-    Node* next;
+struct node {
+    int data ;
+    node *next;
 };
-Node* head ;
+node *head = NULL, *curr_node;
+int size;
 
-void Insert(int x){
-    Node* temp = new Node();
-    temp->data = x;
-    temp->next = NULL;
-    if(head==NULL) head = temp;
-
-}
-
-void Print(){
-
-}
-int main(void){
-    int x,n;
-    std::cout << "Enter the lsit size:";
-    std::cin >> n;
-    for(int i=0;i<n;i++){
-        std::cout << "Enter the number:";
-        std :: cin >> x;
-        Insert(x);
-        Node* temp1=head;
-        while(temp1!=NULL){//traversing a list
-            temp1=temp1->next;
-        }
+void create(int a){
+    if(head==NULL){
+        node* temp = new node();
+        temp->data = a;
+        temp->next = NULL;
+        head = temp;
+        curr_node=head;
+    } else if(head!=NULL){
+        node* temp = new node();
+        temp->data = a;
+        curr_node->next = temp;
+        temp->next=NULL;
+        curr_node = temp;
     }
+}
+
+void print(){
+    node *temp1 = head;
+    while(temp1->next!=NULL){
+        std::cout << temp1->data << std::endl;
+        temp1=temp1->next;
+    }
+}
+
+int main(void){
+    int data;
+    std::cout << "Enter the size of the linked list you want to create:";
+    std::cin >> size;
+    
+    for(int counter =0; counter <size; counter++){
+        std::cout << "Enter the data:";
+        std::cin >> data;
+        create(data);
+    }
+    void print();
+    
 }

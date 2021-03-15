@@ -29,6 +29,7 @@ void print(){
         std::cout << temp1->data << std::endl;
         temp1=temp1->next;
     }
+    std::cout << temp1->data << std::endl;
 }
 
 int main(void){
@@ -41,6 +42,6 @@ int main(void){
         std::cin >> data;
         create(data);
     }
-    void print();
+    print();
     
 }

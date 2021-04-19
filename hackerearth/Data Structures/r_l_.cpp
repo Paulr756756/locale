@@ -1,6 +1,13 @@
 #include <iostream>
 
-int main(void){
+struct Node{
+    int data;
+    Node *link;    
+};
 
+Node *HEAD;
+
+int main(void){
+    
     
 }
